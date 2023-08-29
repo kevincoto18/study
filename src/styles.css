@@ -1,1 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* body{
+   
+   
+} */
+
+@keyframes animate {
+   0%{
+       transform: translateY(0) rotate(0deg);
+       opacity: 1;
+       border-radius: 0;
+   }
+   100%{
+       transform: translateY(-1000px) rotate(720deg);
+       opacity: 0;
+       border-radius: 50%;
+   }
+}
+
+.background {
+   position: fixed;
+   width: 100vw;
+   height: 100vh;
+   top: 0;
+   left: 0;
+   margin: 0;
+   padding: 0;
+   background: #4e54c8;
+   overflow: hidden;
+}
+.background li {
+   position: absolute;
+   display: block;
+   list-style: none;
+   width: 20px;
+   height: 20px;
+   background: rgba(255, 255, 255, 0.2);
+   animation: animate 48s linear infinite;
+}
+
+
+
+
+.background li:nth-child(0) {
+   left: 35%;
+   width: 222px;
+   height: 222px;
+   bottom: -222px;
+   animation-delay: 1s;
+}
+.background li:nth-child(1) {
+   left: 67%;
+   width: 461px;
+   height: 461px;
+   bottom: -461px;
+   animation-delay: 3s;
+}
+.background li:nth-child(2) {
+   left: 78%;
+   width: 422px;
+   height: 422px;
+   bottom: -422px;
+   animation-delay: 9s;
+}
+.background li:nth-child(3) {
+   left: 89%;
+   width: 490px;
+   height: 490px;
+   bottom: -490px;
+   animation-delay: 4s;
+}
+.background li:nth-child(4) {
+   left: 56%;
+   width: 275px;
+   height: 275px;
+   bottom: -275px;
+   animation-delay: 12s;
+}
+.background li:nth-child(5) {
+   left: 78%;
+   width: 177px;
+   height: 177px;
+   bottom: -177px;
+   animation-delay: 11s;
+}
+.background li:nth-child(6) {
+   left: 36%;
+   width: 392px;
+   height: 392px;
+   bottom: -392px;
+   animation-delay: 29s;
+}
+.background li:nth-child(7) {
+   left: 49%;
+   width: 141px;
+   height: 141px;
+   bottom: -141px;
+   animation-delay: 23s;
+}

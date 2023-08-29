@@ -1,0 +1,41 @@
+.card {
+    margin: auto;
+    background-color: #ffffff;
+    width: 50%;
+    border: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data {
+    display: flex; /* Utilizamos flexbox para colocar los grupos de forma horizontal */
+}
+
+.notas,
+.porcentajes {
+    padding: 2rem; /* Añadimos espaciado interno para separar los elementos */
+}
+
+.notas input[type="text"],
+.porcentajes input[type="text"] {
+    width: 110%; /* Ancho del 100% del contenedor */
+    padding: 15px; /* Espaciado interno para mayor espacio alrededor del texto */
+    font-size: 16px; /* Tamaño de fuente */
+  
+}
+.btn {
+    display: block;
+    margin: auto; /* Centra horizontalmente */
+    width: 35%;
+}
+
+
+@media (max-width: 1000px) {
+    .card {
+        width: 95%;
+        height: 35vw;
+    }
+}

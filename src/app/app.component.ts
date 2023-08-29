@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'study';
+  title = 'Study.io';
+  Subtitle = '¿Necesitas saber cuanto te falta para tu parcial?';
 }
