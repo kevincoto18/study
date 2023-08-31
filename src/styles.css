@@ -1,10 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-/* body{
-   
-   
-} */
+@media (max-width: 768px) {
+   body {
+       min-width: 580px; /* Establece un ancho mínimo de pantalla */
+   }
+}
 
 @keyframes animate {
    0%{
@@ -99,3 +100,4 @@
    bottom: -141px;
    animation-delay: 23s;
 }
+

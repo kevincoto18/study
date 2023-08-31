@@ -1,36 +1,26 @@
-
-  <div class="card">
-    <div class="card-body">
-        <div class="data">
-        <div class="notas">
-            <div class="notas">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Digita tus notas actuales</label>
-                    <input type="text" class="form-control"  placeholder="Nota">
-                  </div>
-                  <div class="mb-3">
-                    
-                    <input type="text" class="form-control"  placeholder="Nota">
-                  </div>
-                </div>
+<div class="card">
+  <div class="card-body">
+    <div class="data">
+      <div class="notas">
+        <div class="notas" *ngFor="let nota of notas; let i = index">
+          <div class="mb-3">
+            <label for="nota{{ i }}" class="form-label">Nota {{ i + 1 }}</label>
+            <input type="text" class="form-control" id="nota{{ i }}" [(ngModel)]="notas[i]" >
+          </div>
         </div>
-        <div class="porcentajes">
-            <div class="porcentajes">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Digita el porcentaje</label>
-                    <input type="text" class="form-control"  placeholder="Porcentaje">
-                  </div>
-                  <div class="mb-3">
-                    <input type="text" class="form-control"  placeholder="Porcentaje">
-                  </div>
-                </div>
+      </div>
+      <div class="porcentajes">
+        <div class="porcentajes" *ngFor="let porcentaje of porcentajes; let i = index">
+          <div class="mb-3">
+            <label for="porcentaje{{ i }}" class="form-label">Porcentaje {{ i + 1 }} (%)</label>
+            <input type="text" class="form-control" id="porcentaje{{ i }}" [(ngModel)]="porcentajes[i]">
+          </div>
         </div>
+      </div>
     </div>
-       
     <div class="buttom">
-        <button type="button" class="btn btn-primary">Calcular</button>
+      <button type="button" class="btn btn-primary" (click)="calculate()">Calcular</button>
+      <button type="button" class="btn btn-primary" (click)="agregarLinea()">Agregar</button>
     </div>
-    </div>
-   
+  </div>
 </div>
-

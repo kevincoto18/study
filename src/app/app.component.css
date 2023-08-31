@@ -24,3 +24,21 @@
     font-size: 2rem; /* Ajusta el tamaño de fuente según tu preferencia */
     text-align: center; /* Alinea el texto al centro */
 }
+
+@media (max-width: 768px) {
+    .subtitle {
+        font-size: 1.5rem; /* Reduce el tamaño de fuente en pantallas más pequeñas */
+        margin-bottom: 0.5rem; /* Ajusta el margen inferior en pantallas pequeñas */
+    }
+}
+
+/* .background-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 30%;
+    z-index: 1; /* Coloca el SVG detrás de otros elementos 
+} */
+
+ 
