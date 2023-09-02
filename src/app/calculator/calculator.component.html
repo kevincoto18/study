@@ -5,7 +5,7 @@
         <div class="notas" *ngFor="let nota of notas; let i = index">
           <div class="mb-3">
             <label for="nota{{ i }}" class="form-label">Nota {{ i + 1 }}</label>
-            <input type="text" class="form-control" id="nota{{ i }}" [(ngModel)]="notas[i]" >
+            <input type="text" class="form-control" id="nota{{ i }}" [(ngModel)]="notas[i]">
           </div>
         </div>
       </div>
@@ -19,8 +19,13 @@
       </div>
     </div>
     <div class="buttom">
+      <button type="button" class="btn btn-secondary" (click)="agregarLinea()"> Agregar</button>
       <button type="button" class="btn btn-primary" (click)="calculate()">Calcular</button>
-      <button type="button" class="btn btn-primary" (click)="agregarLinea()">Agregar</button>
+     
     </div>
   </div>
 </div>
+
+
+
+

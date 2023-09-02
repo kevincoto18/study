@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'calculator',
@@ -16,17 +17,63 @@ export class CalculatorComponent {
     this.porcentajes.push(1);
   }
 
+  eliminarFila(index: number) {
+    this.notas.splice(index, 1);
+    this.porcentajes.splice(index, 1);
+  }
+  
   calculate() {
     if (this.notas.length !== this.porcentajes.length) {
       console.log('Las notas y porcentajes no son iguales');
       return;
     }
 
-    const GradesValue = this.notas.reduce((total, grade, i) => total + (grade * (this.porcentajes[i] / 100)), 0);
-    console.log("Promedio ponderado:", GradesValue);
+    const GradesValue = this.notas.reduce(
+      (total, grade, i) => total + grade * (this.porcentajes[i] / 100),
+      0
+    );
+    console.log('Promedio ponderado:', GradesValue);
 
-    const GradeFinal = Math.round(((this.notaDeseada - GradesValue) / (this.porcentajeRestante / 100)) * 100) / 100;
-    console.log("Final:", GradeFinal);
+    const GradeFinal =
+      Math.round(
+        ((this.notaDeseada - GradesValue) / (this.porcentajeRestante / 100)) *
+          100
+      ) / 100;
+    console.log('Final:', GradeFinal);
+
+    if (GradeFinal < 60) {
+      Swal.fire(
+        '¡Felicidades!',
+        `Te falta solo un  ${GradeFinal.toFixed(
+          2
+        )} para pasar, tu promedio es de un  ${GradesValue.toFixed(2)} %`,
+        'success'
+      );
+    } else if (GradeFinal >= 60 && GradeFinal < 70) {
+      Swal.fire(
+        'Sigue asi!',
+        `Te falta solo un  ${GradeFinal.toFixed(
+          2
+        )} para pasar, tu promedio es de un  ${GradesValue.toFixed(2)} %`,
+        'info'
+      );
+    } else if (GradeFinal >= 70 && GradeFinal <= 99) {
+      Swal.fire(
+        'Pon tu maximo esfuerzo',
+        `Ocuparias un  ${GradeFinal.toFixed(
+          2
+        )} para pasar, tu promedio es de un  ${GradesValue.toFixed(2)} %`,
+        'warning'
+      );
+    } else if (GradeFinal >= 100) {
+      Swal.fire(
+        'Tal vez para la proxima :/',
+        `Ocuparias un  ${GradeFinal.toFixed(
+          2
+        )} para pasar, tu promedio es de un  ${GradesValue.toFixed(2)} %`,
+        'error'
+      );
+    }
   }
 
   validateInput(event: any) {
